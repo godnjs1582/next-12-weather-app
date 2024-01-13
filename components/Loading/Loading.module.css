@@ -1,0 +1,17 @@
+.loading{
+    width:3rem;
+    height:3rem;
+    margin:0 auto;
+    border:3px solid #ccc;
+    border-radius:50%;
+    border-top-color:#edba4f; 
+    margin-top:2rem;
+    margin-bottom:2rem;
+    animation:spinner 0.6s linear infinite;
+}
+
+@keyframes spinner{
+    to{
+        transform: rotate(360deg);
+    }
+}

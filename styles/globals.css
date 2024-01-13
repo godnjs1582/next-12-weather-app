@@ -2,26 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input, select{
+  color:#fff important;
+  -webkit-text-fill-color: #fff important;
+  -webkit-background-clip: text !important;
+  background-clip:text !important;
+ 
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+@layer components{
+  .main{
+    @apply bg-main h-screen relative flex items-center bg-cover before:content-[''] before:bg-filter before:absolute before:bg-cover before:h-full before:w-full
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  .main__box{
+    @apply flex flex-col gap-6 min-h-[16rem] max-w-[33rem] mx-auto
+    bg-box shadow  py-7 border border-solid z-10 border-gray backdrop-blur-4xl px-5 rounded-sm items-center text-white relative
+  }
+
+  .app-logo{
+    @apply w-36;
+  }
+
+  .auth__form {
+    @apply flex flex-col w-3/4 gap-6
+  }
+
+  .auth__input-container{
+    @apply grid gap-2 grid-cols-[25px_1fr] items-center border rounded-sm pl-2 py-2
+  }
+  .auth__input{
+    @apply bg-transparent border-none focus:outline-none
+  }
+
+  .auth__btn{
+    @apply w-full p-2 font-semibold border-none rounded bg-primary
+  }
+
+  .auth__mode{
+    @apply mx-auto text-sml
+  }
+
+  .btn__secondary{
+    @apply p-2 my-5 mr-auto text-base border rounded-sm text-primary border-primary
+  }
+
+  .weather{
+    @apply relative z-10 flex flex-col items-center justify-center w-full text-center
+  }
 }
